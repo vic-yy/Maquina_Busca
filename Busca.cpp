@@ -38,7 +38,7 @@ vector<string> Busca::normalizador(vector<string> x) {
 
 
 void Busca::adicionar(string s) {
-   
+   IndexInvertido[s];
 }
 
 void Busca::comparador (string nome, string texto, vector<string> termo_buscado) {
@@ -58,11 +58,12 @@ void Busca::comparador (string nome, string texto, vector<string> termo_buscado)
             count++;
             search = -1;
         }
-    
+    }
 }
 
 void Busca::impressao () {
     auto it = IndexInvertido.begin();
     for (auto it1 = (it->second).begin(); it1 != (it->second).end(); it1++++){
         cout << *it1 << endl;
+    }
 }
