@@ -3,11 +3,37 @@
 Busca::Busca() {}
 
 string Busca::RemoveCaractereEspecial(string s) {
-    
+    for (int i = 0; i < s.size(); i++) {
+        // Encontrando o caractere cujo valor na tabela ASCII foge do intervalo
+        
+        if (s[i] < 'A' || s[i] > 'Z' && s[i] < 'a' || s[i] > 'z' ) {  
+          if(s[i]!='0' && s[i]!='1' && s[i]!='2'&& s[i]!='3'&& s[i]!='4'&& s[i]!='5'&& s[i]!='6'&& s[i]!='7'&& s[i]!='8'&& s[i]!='9') {
+            // Apaga o caractere
+            s.erase(i, 1);
+            i--;
+          }
+        }
+    }
+    return s;    
 }
 
 vector<string> Busca::normalizador(vector<string> x) {
+    string termos;
+    vector<string> formatado;
 
+    for (int i = 0 ; i < x.size(); i++){
+        termos = x[i];
+        termos = RemoveCaractereEspecial(termos);
+        termos += ' ';
+        formatado.push_back(termos);
+    }
+
+    for (int j = 0; j <formatado.size(); j++) {
+        for_each(formatado[j].begin(), formatado[j].end(), [](char & c) 
+        {c = ::tolower(c);} );
+    }
+    
+    return formatado;
 }
 
 
