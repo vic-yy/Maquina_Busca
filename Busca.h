@@ -16,6 +16,12 @@ public:
 
     Busca();
 
+    // Acessa o set de IndexInvertido
+    set<string> Valor();
+
+    // Recebe uma cópia de IndexInvertido
+    map<string, set<string>> Index();
+
     string RemoveCaractereEspecial(string s);
 
     vector<string> normalizador(vector<string> x);

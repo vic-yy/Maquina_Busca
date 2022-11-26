@@ -2,6 +2,15 @@
 
 Busca::Busca() {}
 
+set<string> Busca::Valor() {
+    auto it = IndexInvertido.begin();
+    return it->second;
+}
+
+map<string, set<string>> Busca::Index() {
+    return IndexInvertido;
+}
+
 string Busca::RemoveCaractereEspecial(string s) {
     for (int i = 0; i < s.size(); i++) {
         // Encontrando o caractere cujo valor na tabela ASCII foge do intervalo
