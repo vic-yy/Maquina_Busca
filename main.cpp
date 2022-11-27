@@ -15,7 +15,7 @@ int main() {
 
     //A partir daqui receberemos a consulta do usuário
     vector<string> consulta;
-    while (cin>>termos && termos != "fim" ) {
+    while (cin>>termos && termos != "q" ) {
         consulta.push_back(termos);
     }
     //Normalizando a stirng de consulta
