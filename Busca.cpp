@@ -68,6 +68,11 @@ void Busca::comparador (string nome, string texto, vector<string> termo_buscado)
             search = -1;
         }
     }
+
+    auto ite = IndexInvertido.begin(); 
+    if (count == tam && tam != 0) {
+        (ite->second).insert(nome); //Indexação
+    }
 }
 
 void Busca::impressao () {
